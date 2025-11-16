@@ -1,12 +1,10 @@
-import type * as React from "react";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-const Nav = (): React.JSX.Element => {
-    return (
-        <nav>
-            <a href="/">Home</a>
-            <a href="/settings">Settings</a>
-        </nav>
-    );
-};
-
-export { Nav };
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
