@@ -24,6 +24,19 @@ Install dependencies:
 just i
 ```
 
+Generate required modules in development mode:
+
+```sh
+just dev-srv
+just gen
+```
+
+Generate required modules in production mode:
+
+```sh
+just gen-prd
+```
+
 For checking with TypeScript Compiler:
 
 ```sh
