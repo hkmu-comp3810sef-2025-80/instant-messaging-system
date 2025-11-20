@@ -1,23 +1,28 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
-interface User {
-    id: string;
-    email: string;
-    name: string;
-}
+type UserStore = {
+    id: string | undefined;
+    name: string | undefined;
+    setId: (id: string) => void;
+    setName: (name: string) => void;
+};
 
-interface UserState {
-    user: User | null;
-    token: string | null;
-    setUser: (user: User | null) => void;
-    setToken: (token: string | null) => void;
-    logout: () => void;
-}
+const useUserStore = create<UserStore>(
+    (set): UserStore => ({
+        id: undefined,
+        name: undefined,
+        setId: (id: string): void => {
+            set({
+                id,
+            });
+        },
+        setName: (name: string): void => {
+            set({
+                name,
+            });
+        },
+    }),
+);
 
-export const useUserStore = create<UserState>((set) => ({
-    user: null,
-    token: null,
-    setUser: (user) => set({ user }),
-    setToken: (token) => set({ token }),
-    logout: () => set({ user: null, token: null }),
-}));
+export type { UserStore };
+export { useUserStore };

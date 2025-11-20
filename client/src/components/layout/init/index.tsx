@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React from 'react';
+import type * as React from "react";
 
-export function Init() {
-  React.useEffect(() => {
-    // Initialization logic will go here
-    console.log('App initialized');
-  }, []);
+import { useInitialize } from "#/hooks/init";
 
-  return null; // This component doesn't render anything
-}
+const Init = (): React.JSX.Element => {
+    useInitialize();
+    return <>{}</>;
+};
+
+export { Init };

@@ -1,34 +1,43 @@
 import * as React from "react";
+
 import { renewAccess } from "#/openapi";
 import { useUserStore } from "#/stores/user";
 
 type Identity = {
-    accessToken: string;
-    refreshToken: string;
+    id: string;
+    name: string;
 };
 
-export const useInit = () => {
-    const { setUser, setToken } = useUserStore();
+const refreshIdentity = async (): Promise<Identity | undefined> => {
+    const { data, error } = await renewAccess();
 
-    React.useEffect(() => {
-        const initializeAuth = async () => {
-            try {
-                // Check for existing token in localStorage
-                const token = localStorage.getItem('token');
-                if (token) {
-                    // TODO: Validate token and get user data
-                    // const userData = await renewAccess();
-                    // setUser(userData);
-                    // setToken(token);
-                }
-            } catch (error) {
-                console.error('Auth initialization failed:', error);
-                localStorage.removeItem('token');
-            }
-        };
+    if (!data || error) return void 0;
 
-        initializeAuth();
-    }, [setUser, setToken]);
+    const payload = data.data;
 
-    return null;
+    return {
+        id: payload.id,
+        name: payload.name,
+    };
 };
+
+const useInitialize = (): void => {
+    const { setId, setName } = useUserStore();
+
+    const onInitRefreshIdentity = React.useEffectEvent((): void => {
+        (async (): Promise<void> => {
+            const identity: Identity | undefined = await refreshIdentity();
+
+            if (!identity) return void 0;
+
+            setId(identity.id);
+            setName(identity.name);
+        })();
+    });
+
+    React.useEffect((): void => {
+        onInitRefreshIdentity();
+    }, []);
+};
+
+export { useInitialize };
