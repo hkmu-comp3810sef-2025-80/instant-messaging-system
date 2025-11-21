@@ -10,8 +10,9 @@ const connectDatabase = async (): Promise<void> => {
     try {
         const client: MongoClient = await MongoClient.connect(MONGODB_URI);
         database = client.db(MONGODB_DB_NAME);
-    } catch (_: unknown) {
-        throw new Error("Failed to connect to database.");
+    } catch (err: unknown) {
+        if (err instanceof Error) throw err;
+        throw new Error("Failed to connect to database");
     }
 };
 
