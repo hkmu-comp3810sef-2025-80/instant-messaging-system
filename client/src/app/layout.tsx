@@ -1,6 +1,8 @@
 import type { Metadata, ResolvingMetadata, Viewport } from "next";
 import type * as React from "react";
 
+import "#/styles/index.css";
+
 export const generateMetadata = async (
     _props: Record<string, unknown>,
     _: ResolvingMetadata,
@@ -29,7 +31,10 @@ export default ({
 }>): React.JSX.Element => {
     // content
     return (
-        <html lang="en">
+        <html
+            lang="en"
+            suppressHydrationWarning
+        >
             <head>
                 <meta charSet="utf-8" />
             </head>

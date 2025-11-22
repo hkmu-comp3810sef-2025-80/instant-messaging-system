@@ -1,79 +1,51 @@
-"use client";
-
 import type * as React from "react";
 
 import Link from "next/link";
 
+import { NavThemeButton } from "#/components/layout/nav/theme";
+import { buttonVariants } from "#/components/ui/button";
+import { cn } from "#/lib/utils";
+
 const Nav = (): React.JSX.Element => {
     return (
-        <nav
-            style={{
-                backgroundColor: "#f8f9fa",
-                padding: "1rem 2rem",
-                borderBottom: "1px solid #dee2e6",
-            }}
-        >
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    maxWidth: "1200px",
-                    margin: "0 auto",
-                }}
-            >
+        <nav className="fixed top-0 left-0 right-0 z-50 border-b bg-background">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-4">
                 <Link
                     href="/"
-                    style={{
-                        textDecoration: "none",
-                        color: "#333",
-                        fontWeight: "bold",
-                        fontSize: "1.2rem",
-                    }}
+                    className="flex items-center gap-2 font-bold"
                 >
-                    💬 Chat App
+                    <span className="text-2xl">💬</span>
+
+                    {/* Hide title on mobile, show from md+ */}
+                    <span className="hidden md:inline text-xl">
+                        Instant Messaging System
+                    </span>
                 </Link>
 
-                <div
-                    style={{
-                        display: "flex",
-                        gap: "1rem",
-                    }}
-                >
-                    <Link
-                        href="/create-room"
-                        style={{
-                            textDecoration: "none",
-                            color: "#e67e22",
-                            padding: "0.5rem 1rem",
-                            borderRadius: "4px",
-                            border: "1px solid #e67e22",
-                        }}
-                    >
-                        Create Room
-                    </Link>
+                <div className="flex items-center gap-4">
                     <Link
                         href="/auth/login"
-                        style={{
-                            textDecoration: "none",
-                            color: "#007bff",
-                            padding: "0.5rem 1rem",
-                            borderRadius: "4px",
-                        }}
+                        className={cn(
+                            buttonVariants({
+                                variant: "ghost",
+                            }),
+                        )}
                     >
-                        Login
+                        {"Sign In"}
                     </Link>
+
                     <Link
                         href="/auth/register"
-                        style={{
-                            textDecoration: "none",
-                            color: "#28a745",
-                            padding: "0.5rem 1rem",
-                            borderRadius: "4px",
-                        }}
+                        className={cn(
+                            buttonVariants({
+                                variant: "ghost",
+                            }),
+                        )}
                     >
-                        Register
+                        {"Sign Up"}
                     </Link>
+
+                    <NavThemeButton />
                 </div>
             </div>
         </nav>
