@@ -1,29 +1,39 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "es6"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "noEmit": true,
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "#/*": [
+                "./src/*"
+            ],
+            "#/public/*": [
+                "./public/*"
+            ],
+            "#/openapi": [
+                "./.openapi/index.ts"
+            ]
+        }
+    },
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "./.next/types/**/*.ts",
+        "./next-env.d.ts",
+        ".next/types/**/*.ts"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "#/*": ["./src/*"],
-      "#/openapi": ["./src/lib/openapi/index.ts"]
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+    "exclude": [
+        "./node_modules/**/*"
+    ]
 }
