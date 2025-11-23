@@ -1,5 +1,7 @@
 import type * as React from "react";
 
+import { CreateRoomForm } from "#/components/pages/rooms-create/form";
+
 export default (): React.JSX.Element => {
-    return <div>{"Create room"}</div>;
+    return <CreateRoomForm />;
 };

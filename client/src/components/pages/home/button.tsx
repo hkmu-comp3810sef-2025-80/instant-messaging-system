@@ -13,24 +13,38 @@ const HomeMainButton = (): React.JSX.Element => {
 
     if (id && name) {
         return (
-            <Link
-                href="/rooms"
-                className={cn(
-                    buttonVariants({
-                        variant: "default",
-                        size: "lg",
-                    }),
-                    "font-bold bg-blue-500 hover:bg-blue-600 text-white dark:text-white",
-                )}
-            >
-                {"Find Rooms"}
-            </Link>
+            <>
+                <Link
+                    href="/rooms/create"
+                    className={cn(
+                        buttonVariants({
+                            variant: "default",
+                            size: "lg",
+                        }),
+                        "font-bold bg-blue-500 hover:bg-blue-600 text-white dark:text-white",
+                    )}
+                >
+                    {"Create Room"}
+                </Link>
+                <Link
+                    href="/rooms"
+                    className={cn(
+                        buttonVariants({
+                            variant: "secondary",
+                            size: "lg",
+                        }),
+                        "font-bold",
+                    )}
+                >
+                    {"Find Rooms"}
+                </Link>
+            </>
         );
     }
 
     return (
         <Link
-            href="/auth/register"
+            href="/auth/login"
             className={cn(
                 buttonVariants({
                     variant: "default",
