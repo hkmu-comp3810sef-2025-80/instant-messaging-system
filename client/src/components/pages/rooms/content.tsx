@@ -1,6 +1,7 @@
 "use client";
 
 import { useInfiniteQuery } from "@tanstack/react-query";
+import Link from "next/link";
 import * as React from "react";
 import { toast } from "sonner";
 
@@ -11,7 +12,6 @@ import {
     CardHeader,
     CardTitle,
 } from "#/components/ui/card";
-import { Skeleton } from "#/components/ui/skeleton";
 import { findRooms as findRoomsProcess } from "#/openapi";
 
 const PAGE_SIZE = 30 as const;
@@ -29,14 +29,19 @@ const Room = (props: RoomProps): React.JSX.Element => {
     const { name, description } = props;
 
     return (
-        <Card className="p-4">
-            <CardHeader className="p-0 mb-2">
-                <CardTitle className="text-lg">{name}</CardTitle>
-                {description ? (
-                    <CardDescription>{description}</CardDescription>
-                ) : null}
-            </CardHeader>
-        </Card>
+        <Link
+            href={`/rooms/${props.id}`}
+            passHref
+        >
+            <Card className="p-4 hover:bg-secondary">
+                <CardHeader className="p-0 mb-2">
+                    <CardTitle className="text-lg">{name}</CardTitle>
+                    {description ? (
+                        <CardDescription>{description}</CardDescription>
+                    ) : null}
+                </CardHeader>
+            </Card>
+        </Link>
     );
 };
 
@@ -87,29 +92,23 @@ const Rooms = (): React.JSX.Element => {
 
     if (status === "pending") {
         return (
-            <div>
-                {Array.from({
-                    length: 8,
-                }).map(
-                    (_, index): React.JSX.Element => (
-                        <Skeleton
-                            // biome-ignore lint/suspicious/noArrayIndexKey: I don't care
-                            key={index}
-                            className="m-4 h-32 w-auto"
-                        />
-                    ),
-                )}
+            <div className="flex items-center justify-center w-full h-screen">
+                <div>{"Loading..."}</div>
             </div>
         );
     }
 
     if (status === "error") {
-        return <div className="text-destructive">Something went wrong!</div>;
+        return (
+            <div className="flex items-center justify-center w-full h-screen">
+                <div>{"Something went wrong!"}</div>
+            </div>
+        );
     }
 
     return (
-        <div className="m-4">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="mx-auto max-w-6xl p-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
                 {data.pages.map(
                     (rooms, index): React.JSX.Element => (
                         // biome-ignore lint/suspicious/noArrayIndexKey: I don't care

@@ -5,7 +5,7 @@ import { CreateRoomButton } from "#/components/pages/rooms/create";
 
 export default (): React.JSX.Element => {
     return (
-        <div className="pt-16">
+        <div className="pt-17">
             <Rooms />
             <CreateRoomButton />
         </div>
