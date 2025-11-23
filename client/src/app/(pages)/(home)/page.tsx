@@ -20,11 +20,11 @@ export default (): React.JSX.Element => {
                         "font-bold bg-green-600 hover:bg-green-700 text-white dark:text-white",
                     )}
                 >
-                    Sign Up
+                    {"Sign Up"}
                 </Link>
 
                 <Link
-                    href="/servers"
+                    href="/rooms"
                     className={cn(
                         buttonVariants({
                             variant: "default",
@@ -32,7 +32,7 @@ export default (): React.JSX.Element => {
                         "font-bold bg-blue-500 hover:bg-blue-600 text-white dark:text-white",
                     )}
                 >
-                    Go to Server List
+                    {"Find Rooms"}
                 </Link>
             </div>
         </div>

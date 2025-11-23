@@ -74,12 +74,6 @@ const RegisterForm = (): React.JSX.Element => {
 
     return (
         <div className="flex h-screen flex-col bg-muted dark:bg-background">
-            {/* Top Navigation */}
-            <header className="w-full bg-card text-card-foreground shadow-sm px-6 py-4">
-                <h1 className="text-xl font-light">💬 Chat System</h1>
-            </header>
-
-            {/* Main Content */}
             <main className="flex flex-1 items-center justify-center px-6 py-8">
                 <Card className="w-full max-w-md">
                     <CardHeader className="text-center">

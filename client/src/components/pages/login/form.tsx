@@ -48,7 +48,7 @@ const LoginForm = (): React.JSX.Element => {
             });
 
             if (error) {
-                const err = error?.errors[0];
+                const err = error.errors[0];
 
                 if (err) {
                     if (err.code === "invalid") {
