@@ -16,6 +16,7 @@ import {
     jsonResponseSchema,
     objectIdSchema,
 } from "#/@types/zod";
+import { ACCESS_NAME } from "#/configs/token";
 import {
     ServiceRoomCreateErrorCode,
     ServiceRoomCreateErrorMessage,
@@ -307,7 +308,7 @@ router.post(
         try {
             const { access: acs, name, description } = c.req.valid("json");
 
-            const access: string | undefined = getCookie(c, "access") ?? acs;
+            const access: string | undefined = getCookie(c, ACCESS_NAME) ?? acs;
 
             const result: InsertOneResult<Room> = await serviceRoomCreate({
                 access,
@@ -409,7 +410,7 @@ router.patch(
             const { id } = c.req.valid("param");
             const { access: acs, name, description } = c.req.valid("json");
 
-            const access: string | undefined = getCookie(c, "access") ?? acs;
+            const access: string | undefined = getCookie(c, ACCESS_NAME) ?? acs;
 
             await serviceRoomUpdate({
                 access,
@@ -506,7 +507,7 @@ router.delete(
             const { access: acs } = c.req.valid("json");
             const { id } = c.req.valid("param");
 
-            const access: string | undefined = getCookie(c, "access") ?? acs;
+            const access: string | undefined = getCookie(c, ACCESS_NAME) ?? acs;
 
             await serviceRoomDelete({
                 access,

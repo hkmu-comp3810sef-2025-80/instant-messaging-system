@@ -13,6 +13,7 @@ import {
     createJsonSuccessResponseSchema,
     jsonResponseSchema,
 } from "#/@types/zod";
+import { ACCESS_NAME } from "#/configs/token";
 import {
     ServiceUserFindErrorCode,
     ServiceUserFindErrorMessage,
@@ -246,7 +247,7 @@ router.post(
         try {
             const { access: acs, id, name, password } = c.req.valid("json");
 
-            const access: string | undefined = getCookie(c, "access") ?? acs;
+            const access: string | undefined = getCookie(c, ACCESS_NAME) ?? acs;
 
             await serviceUserUpdate({
                 access,

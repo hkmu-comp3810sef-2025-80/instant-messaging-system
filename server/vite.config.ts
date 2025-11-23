@@ -36,5 +36,6 @@ export default defineConfig({
     server: {
         // development server port
         port: 4001,
+        cors: false,
     },
 });

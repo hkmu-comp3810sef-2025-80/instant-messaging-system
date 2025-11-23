@@ -13,7 +13,14 @@ app.use(async (_, next): Promise<void> => {
     await next();
 });
 
-app.use(cors());
+app.use(
+    cors({
+        origin(origin: string): string {
+            return origin;
+        },
+        credentials: true,
+    }),
+);
 
 app.route("/", router);
 

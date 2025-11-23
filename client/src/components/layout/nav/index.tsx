@@ -3,8 +3,7 @@ import type * as React from "react";
 import Link from "next/link";
 
 import { NavThemeButton } from "#/components/layout/nav/theme";
-import { buttonVariants } from "#/components/ui/button";
-import { cn } from "#/lib/utils";
+import { NavUser } from "#/components/layout/nav/user";
 
 const Nav = (): React.JSX.Element => {
     return (
@@ -23,28 +22,7 @@ const Nav = (): React.JSX.Element => {
                 </Link>
 
                 <div className="flex items-center gap-4">
-                    <Link
-                        href="/auth/login"
-                        className={cn(
-                            buttonVariants({
-                                variant: "ghost",
-                            }),
-                        )}
-                    >
-                        {"Sign In"}
-                    </Link>
-
-                    <Link
-                        href="/auth/register"
-                        className={cn(
-                            buttonVariants({
-                                variant: "ghost",
-                            }),
-                        )}
-                    >
-                        {"Sign Up"}
-                    </Link>
-
+                    <NavUser />
                     <NavThemeButton />
                 </div>
             </div>

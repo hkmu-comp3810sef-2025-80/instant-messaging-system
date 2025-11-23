@@ -1,5 +1,9 @@
-const refresh_exp: number = Date.now() + 1000 * 60 * 60 * 24 * 365;
+const REFRESH_NAME = "ims_rf" as const;
 
-const access_exp: number = Date.now() + 1000 * 60 * 15;
+const REFRESH_EXP: number = 1000 * 60 * 60 * 24 * 365;
 
-export { refresh_exp, access_exp };
+const ACCESS_NAME = "ims_ac" as const;
+
+const ACCESS_EXP: number = 1000 * 60 * 15;
+
+export { REFRESH_NAME, REFRESH_EXP, ACCESS_NAME, ACCESS_EXP };

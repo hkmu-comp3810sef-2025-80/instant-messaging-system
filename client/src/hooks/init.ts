@@ -9,7 +9,9 @@ type Identity = {
 };
 
 const refreshIdentity = async (): Promise<Identity | undefined> => {
-    const { data, error } = await renewAccess();
+    const { data, error } = await renewAccess({
+        credentials: "include",
+    });
 
     if (!data || error) return void 0;
 

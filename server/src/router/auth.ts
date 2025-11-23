@@ -14,7 +14,13 @@ import {
     createJsonSuccessResponseSchema,
     jsonResponseSchema,
 } from "#/@types/zod";
-import { access_exp, refresh_exp } from "#/configs/token";
+import {
+    ACCESS_EXP,
+    ACCESS_NAME,
+    REFRESH_EXP,
+    REFRESH_NAME,
+} from "#/configs/token";
+import { IS_PRD } from "#/constants";
 import {
     ServiceUserLoginErrorCode,
     ServiceUserLoginErrorMessage,
@@ -182,14 +188,18 @@ router.post(
                 password,
             });
 
-            setCookie(c, "refresh", data.refresh, {
-                expires: new Date(refresh_exp),
+            setCookie(c, REFRESH_NAME, data.refresh, {
+                expires: new Date(Date.now() + REFRESH_EXP),
                 httpOnly: true,
+                secure: IS_PRD,
+                sameSite: IS_PRD ? "None" : "lax",
             });
 
-            setCookie(c, "access", data.access, {
-                expires: new Date(access_exp),
+            setCookie(c, ACCESS_NAME, data.access, {
+                expires: new Date(Date.now() + ACCESS_EXP),
                 httpOnly: true,
+                secure: IS_PRD,
+                sameSite: IS_PRD ? "None" : "lax",
             });
 
             return createJsonResponse<ServiceUserLoginResult>(c, {
@@ -267,21 +277,26 @@ router.post(
     async (c): Promise<Response> => {
         try {
             const { refresh: rfh } = c.req.valid("json");
-            const refresh: string | undefined = getCookie(c, "refresh") ?? rfh;
+            const refresh: string | undefined =
+                getCookie(c, REFRESH_NAME) ?? rfh;
 
             const data: ServiceUserRenewRefreshResult =
                 await serviceUserRenewRefresh({
                     refresh,
                 });
 
-            setCookie(c, "refresh", data.refresh, {
-                expires: new Date(refresh_exp),
+            setCookie(c, REFRESH_NAME, data.refresh, {
+                expires: new Date(Date.now() + REFRESH_EXP),
                 httpOnly: true,
+                secure: IS_PRD,
+                sameSite: IS_PRD ? "None" : "lax",
             });
 
-            setCookie(c, "access", data.access, {
-                expires: new Date(access_exp),
+            setCookie(c, ACCESS_NAME, data.access, {
+                expires: new Date(Date.now() + ACCESS_EXP),
                 httpOnly: true,
+                secure: IS_PRD,
+                sameSite: IS_PRD ? "None" : "lax",
             });
 
             return createJsonResponse<ServiceUserRenewRefreshResult>(c, {
@@ -358,15 +373,16 @@ router.post(
     async (c): Promise<Response> => {
         try {
             const { refresh: rfh } = c.req.valid("json");
-            const refresh: string | undefined = getCookie(c, "refresh") ?? rfh;
+            const refresh: string | undefined =
+                getCookie(c, REFRESH_NAME) ?? rfh;
 
             const data: ServiceUserRenewAccessResult =
                 await serviceUserRenewAccess({
                     refresh,
                 });
 
-            setCookie(c, "refresh", data.access, {
-                expires: new Date(access_exp),
+            setCookie(c, ACCESS_NAME, data.access, {
+                expires: new Date(Date.now() + ACCESS_EXP),
                 httpOnly: true,
             });
 
@@ -379,14 +395,30 @@ router.post(
     },
 );
 
-router.post("/logout", async (c): Promise<Response> => {
-    try {
-        deleteCookie(c, "refresh");
-        deleteCookie(c, "access");
-        return createJsonResponse(c);
-    } catch (err: unknown) {
-        return routerErrorHandler(err);
-    }
-});
+router.post(
+    "/logout",
+    describeRoute({
+        operationId: "logout",
+        responses: {
+            200: {
+                description: "Successful response",
+                content: {
+                    "application/json": {
+                        schema: resolver(jsonResponseSchema),
+                    },
+                },
+            },
+        },
+    }),
+    async (c): Promise<Response> => {
+        try {
+            deleteCookie(c, REFRESH_NAME);
+            deleteCookie(c, ACCESS_NAME);
+            return createJsonResponse(c);
+        } catch (err: unknown) {
+            return routerErrorHandler(err);
+        }
+    },
+);
 
 export { router as routerAuth };

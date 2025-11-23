@@ -13,6 +13,7 @@ import {
     createJsonSuccessResponseSchema,
     objectIdSchema,
 } from "#/@types/zod";
+import { ACCESS_NAME } from "#/configs/token";
 import {
     ServiceMessageCreateErrorCode,
     ServiceMessageCreateErrorMessage,
@@ -212,7 +213,7 @@ router.post(
         try {
             const { access: acs, roomId, content } = c.req.valid("json");
 
-            const access: string | undefined = getCookie(c, "access") ?? acs;
+            const access: string | undefined = getCookie(c, ACCESS_NAME) ?? acs;
 
             const result = await serviceMessageCreate({
                 access,
@@ -314,7 +315,7 @@ router.delete(
             const { id } = c.req.valid("param");
             const { access: acs } = c.req.valid("json");
 
-            const access: string | undefined = getCookie(c, "access") ?? acs;
+            const access: string | undefined = getCookie(c, ACCESS_NAME) ?? acs;
 
             await serviceMessageDelete({
                 access,

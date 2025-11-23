@@ -41,6 +41,7 @@ const LoginForm = (): React.JSX.Element => {
 
         try {
             const { data, error } = await loginProcess({
+                credentials: "include",
                 body: {
                     name: username,
                     password,
@@ -74,7 +75,10 @@ const LoginForm = (): React.JSX.Element => {
             toast.success("Login successful");
 
             router.push("/rooms");
-        } catch (_: unknown) {
+        } catch (err: unknown) {
+            console.log({
+                err,
+            });
             toast.error("Unknown error");
         } finally {
             setLoading(false);
