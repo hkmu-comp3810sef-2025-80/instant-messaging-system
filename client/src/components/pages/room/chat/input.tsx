@@ -1,8 +1,6 @@
 "use client";
 
-import type { QueryClient } from "@tanstack/react-query";
-
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import * as React from "react";
 import { toast } from "sonner";
 
@@ -14,11 +12,10 @@ type RoomInputProps = {
     // room id
     id: string;
     scrollArea: React.RefObject<HTMLDivElement | null>;
+    setHvNewMessage: (bl: boolean) => void;
 };
 
 const RoomInput = (props: RoomInputProps): React.JSX.Element => {
-    const client: QueryClient = useQueryClient();
-
     const [loading, setLoading] = React.useState<boolean>(false);
     const [message, setMessage] = React.useState<string>("");
 
@@ -73,14 +70,8 @@ const RoomInput = (props: RoomInputProps): React.JSX.Element => {
         ],
         mutationFn,
         onSuccess: async (): Promise<void> => {
-            await client.invalidateQueries({
-                queryKey: [
-                    "messages",
-                    props.id,
-                ],
-            });
-
             setMessage("");
+            props.setHvNewMessage(true);
         },
     });
 

@@ -16,6 +16,7 @@ type ChatProps = {
 const Chat = (props: ChatProps): React.JSX.Element => {
     const [lockPos, setLockPos] = React.useState<boolean>(true);
     const scrollAreaRef = React.useRef<HTMLDivElement>(null);
+    const [hvNewMessage, setHvNewMessage] = React.useState<boolean>(false);
 
     /**
      * check if scroll area is at the bottom, if so, lock position.
@@ -60,6 +61,8 @@ const Chat = (props: ChatProps): React.JSX.Element => {
                     id={props.id}
                     lockPos={lockPos}
                     scrollArea={scrollAreaRef}
+                    hvNewMessage={hvNewMessage}
+                    setHvNewMessage={setHvNewMessage}
                 />
             </ScrollArea>
 
@@ -67,6 +70,7 @@ const Chat = (props: ChatProps): React.JSX.Element => {
             <RoomInput
                 id={props.id}
                 scrollArea={scrollAreaRef}
+                setHvNewMessage={setHvNewMessage}
             />
         </div>
     );
