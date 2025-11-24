@@ -2,7 +2,7 @@
 
 import type { QueryClient } from "@tanstack/react-query";
 
-import { useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import * as React from "react";
 import { toast } from "sonner";
 
@@ -13,6 +13,7 @@ import { createMessage } from "#/openapi";
 type RoomInputProps = {
     // room id
     id: string;
+    scrollArea: React.RefObject<HTMLDivElement | null>;
 };
 
 const RoomInput = (props: RoomInputProps): React.JSX.Element => {
@@ -21,9 +22,7 @@ const RoomInput = (props: RoomInputProps): React.JSX.Element => {
     const [loading, setLoading] = React.useState<boolean>(false);
     const [message, setMessage] = React.useState<string>("");
 
-    const sendMessage = async (e: React.FormEvent): Promise<void> => {
-        e.preventDefault();
-
+    const mutationFn = async (): Promise<void> => {
         if (!message) return void 0;
 
         setLoading(true);
@@ -42,39 +41,56 @@ const RoomInput = (props: RoomInputProps): React.JSX.Element => {
 
                 if (!err) {
                     toast.error("Unknown error");
-                    return void 0;
+                    throw new Error();
                 }
 
                 switch (err.code) {
                     case "parse":
                         toast.error("Invalid input");
-                        return void 0;
+                        break;
                     case "invalid":
                         toast.error("Invalid user credentials");
-                        return void 0;
+                        break;
                     default:
                         toast.error("Unknown error");
-                        return void 0;
+                        break;
                 }
-            }
 
+                throw new Error();
+            }
+        } catch (err: unknown) {
+            toast.error("Unknown error");
+            throw err;
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const { mutate } = useMutation({
+        mutationKey: [
+            "message",
+            props.id,
+        ],
+        mutationFn,
+        onSuccess: async (): Promise<void> => {
             await client.invalidateQueries({
                 queryKey: [
                     "messages",
                     props.id,
                 ],
             });
-        } catch (_: unknown) {
-            toast.error("Unknown error");
-        } finally {
-            setLoading(false);
-        }
-    };
+
+            setMessage("");
+        },
+    });
 
     return (
         <form
-            onSubmit={sendMessage}
             className="p-4 border-t flex gap-4"
+            onSubmit={(e: React.FormEvent<HTMLFormElement>): void => {
+                e.preventDefault();
+                mutate();
+            }}
         >
             <Input
                 type="text"

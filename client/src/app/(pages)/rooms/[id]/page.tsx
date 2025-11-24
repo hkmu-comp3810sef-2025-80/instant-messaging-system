@@ -1,9 +1,7 @@
 import type * as React from "react";
 
+import { Chat } from "#/components/pages/room/chat";
 import { RoomInfo } from "#/components/pages/room/info";
-import { RoomInput } from "#/components/pages/room/input";
-import { RoomMessages } from "#/components/pages/room/messages";
-import { ScrollArea } from "#/components/ui/scroll-area";
 
 type PageProps = {
     params: Promise<{
@@ -23,15 +21,7 @@ export default async ({ params }: PageProps): Promise<React.JSX.Element> => {
                 </div>
 
                 {/* Chat Panel */}
-                <div className="flex-1 border rounded-lg flex flex-col">
-                    {/* Messages */}
-                    <ScrollArea className="flex-1 p-4">
-                        <RoomMessages id={id} />
-                    </ScrollArea>
-
-                    {/* Input */}
-                    <RoomInput id={id} />
-                </div>
+                <Chat id={id} />
             </div>
         </div>
     );

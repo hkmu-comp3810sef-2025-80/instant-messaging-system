@@ -1,8 +1,7 @@
 "use client";
 
-import type * as React from "react";
-
 import { useQuery } from "@tanstack/react-query";
+import * as React from "react";
 import { toast } from "sonner";
 
 import { findUser } from "#/openapi";
@@ -56,7 +55,7 @@ const Message = (props: MessageProps): React.JSX.Element => {
         }
     };
 
-    const { data, isLoading, error } = useQuery({
+    const { data } = useQuery({
         queryKey: [
             "user",
             props.sender,
@@ -64,23 +63,14 @@ const Message = (props: MessageProps): React.JSX.Element => {
         queryFn,
     });
 
-    if (isLoading) {
-        return (
-            <div className="p-4 text-sm text-muted-foreground">
-                {"Loading..."}
-            </div>
-        );
-    }
-
-    if (error || !data) {
-        return <div className="p-4 text-sm text-destructive">{"Error"}</div>;
-    }
-
     return (
-        <div className="flex flex-col gap-1 p-4 rounded-lg bg-secondary/40">
-            <span className="text-xs font-medium text-muted-foreground">
-                {data.name}
-            </span>
+        // <div className="flex flex-col gap-1 p-4 rounded-lg bg-secondary/40">
+        <div className="m-4 p-4 rounded-lg bg-secondary/40">
+            <React.Activity mode={data ? "visible" : "hidden"}>
+                <span className="text-xs font-medium text-muted-foreground">
+                    {data?.name}
+                </span>
+            </React.Activity>
             <p className="text-sm leading-relaxed break-words">
                 {props.content}
             </p>
