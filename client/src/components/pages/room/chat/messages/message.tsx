@@ -1,10 +1,14 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import * as React from "react";
 import { toast } from "sonner";
 
+import { cn } from "#/lib/utils";
 import { findUser } from "#/openapi";
+import { useUserStore } from "#/stores/user";
 
 type MessageProps = {
     id: string;
@@ -15,7 +19,13 @@ type MessageProps = {
     updatedAt: string;
 };
 
+dayjs.extend(relativeTime);
+
 const Message = (props: MessageProps): React.JSX.Element => {
+    const { id } = useUserStore();
+
+    const isMe: boolean = id === props.sender;
+
     const queryFn = async () => {
         try {
             const { data, error } = await findUser({
@@ -61,19 +71,29 @@ const Message = (props: MessageProps): React.JSX.Element => {
             props.sender,
         ],
         queryFn,
+        enabled: !isMe,
     });
 
     return (
-        // <div className="flex flex-col gap-1 p-4 rounded-lg bg-secondary/40">
-        <div className="m-4 p-4 rounded-lg bg-secondary/40">
-            <React.Activity mode={data ? "visible" : "hidden"}>
-                <span className="text-xs font-medium text-muted-foreground">
+        <div
+            className={cn(
+                "relative m-4 w-fit max-w-[60%] p-4 rounded-lg bg-secondary/40",
+                isMe ? "ml-auto" : "mr-auto",
+            )}
+        >
+            <React.Activity mode={!isMe ? "visible" : "hidden"}>
+                <div className="pr-8 mb-2 text-sm font-medium text-muted-foreground">
                     {data?.name}
-                </span>
+                </div>
             </React.Activity>
-            <p className="text-sm leading-relaxed break-words">
+
+            <div className="text-md leading-relaxed break-words">
                 {props.content}
-            </p>
+            </div>
+
+            <div className="mt-2 text-xs text-muted-foreground block text-right">
+                {dayjs(props.createdAt).fromNow()}
+            </div>
         </div>
     );
 };
