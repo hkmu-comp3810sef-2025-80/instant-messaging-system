@@ -388,6 +388,44 @@ router.patch(
                     },
                 },
             },
+            403: {
+                description: "Forbidden access",
+                content: {
+                    "application/json": {
+                        schema: resolver(
+                            createJsonFailureResponseSchema(
+                                createJsonResponseErrorSchema(
+                                    z.literal(
+                                        ServiceRoomDeleteErrorCode.FORBIDDEN,
+                                    ),
+                                    z.literal(
+                                        ServiceRoomDeleteErrorMessage.FORBIDDEN,
+                                    ),
+                                ),
+                            ),
+                        ),
+                    },
+                },
+            },
+            404: {
+                description: "Room not found",
+                content: {
+                    "application/json": {
+                        schema: resolver(
+                            createJsonFailureResponseSchema(
+                                createJsonResponseErrorSchema(
+                                    z.literal(
+                                        ServiceRoomDeleteErrorCode.NOT_FOUND,
+                                    ),
+                                    z.literal(
+                                        ServiceRoomDeleteErrorMessage.NOT_FOUND,
+                                    ),
+                                ),
+                            ),
+                        ),
+                    },
+                },
+            },
             500: {
                 description: "Unknown error",
                 content: {
@@ -478,6 +516,44 @@ router.delete(
                                     ),
                                     z.literal(
                                         ServiceRoomDeleteErrorMessage.INVALID,
+                                    ),
+                                ),
+                            ),
+                        ),
+                    },
+                },
+            },
+            403: {
+                description: "Forbidden access",
+                content: {
+                    "application/json": {
+                        schema: resolver(
+                            createJsonFailureResponseSchema(
+                                createJsonResponseErrorSchema(
+                                    z.literal(
+                                        ServiceRoomDeleteErrorCode.FORBIDDEN,
+                                    ),
+                                    z.literal(
+                                        ServiceRoomDeleteErrorMessage.FORBIDDEN,
+                                    ),
+                                ),
+                            ),
+                        ),
+                    },
+                },
+            },
+            404: {
+                description: "Room not found",
+                content: {
+                    "application/json": {
+                        schema: resolver(
+                            createJsonFailureResponseSchema(
+                                createJsonResponseErrorSchema(
+                                    z.literal(
+                                        ServiceRoomDeleteErrorCode.NOT_FOUND,
+                                    ),
+                                    z.literal(
+                                        ServiceRoomDeleteErrorMessage.NOT_FOUND,
                                     ),
                                 ),
                             ),
