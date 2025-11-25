@@ -36,28 +36,28 @@ const Scrollbar = (props: ScrollbarProps): React.JSX.Element => {
                 <S.TrackX
                     className={cn(
                         "fixed z-1",
-                        "bottom-0 left-0 w-full h-[12px]",
+                        "bottom-0 left-0 w-full h-[12px] p-[2px]",
                         !p.page && "absolute",
                     )}
                 >
                     <S.ThumbX
                         className={cn(
                             "absolute bg-primary/60 rounded-full",
-                            "h-[12px]",
+                            "h-[8px]",
                         )}
                     />
                 </S.TrackX>
                 <S.TrackY
                     className={cn(
                         "fixed z-1",
-                        "top-0 right-0 w-[12px] h-full",
+                        "top-0 right-0 w-[12px] h-full p-[2px]",
                         !p.page && "absolute",
                     )}
                 >
                     <S.ThumbY
                         className={cn(
                             "absolute bg-primary/60 rounded-full",
-                            "w-[12px]",
+                            "w-[8px]",
                         )}
                     />
                 </S.TrackY>
