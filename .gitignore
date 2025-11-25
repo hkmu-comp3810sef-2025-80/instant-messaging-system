@@ -2,6 +2,9 @@
 __MACOSX/
 .DS_Store
 
+# Vercel
+.vercel
+
 # Builds
 dist/
 
