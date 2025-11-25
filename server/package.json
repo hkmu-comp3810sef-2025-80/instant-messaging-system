@@ -8,8 +8,8 @@
     "dependencies": {
         "@hono/node-server": "^1.19.6",
         "@jderstd/express": "~0.1.0",
-        "@jderstd/hono": "~0.6.0",
-        "@jderstd/hono-openapi": "~0.1.0",
+        "@jderstd/hono": "~0.7.0",
+        "@jderstd/hono-openapi": "~0.1.1",
         "@node-rs/argon2": "^2.0.2",
         "@scalar/hono-api-reference": "~0.9.24",
         "express": "^5.1.0",

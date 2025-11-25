@@ -127,11 +127,11 @@ importers:
         specifier: ~0.1.0
         version: 0.1.0(@types/express@5.0.3)(express@5.1.0)
       '@jderstd/hono':
-        specifier: ~0.6.0
-        version: 0.6.0(hono@4.10.4)
+        specifier: ~0.7.0
+        version: 0.7.0(hono@4.10.4)
       '@jderstd/hono-openapi':
-        specifier: ~0.1.0
-        version: 0.1.0(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.4))(@jderstd/hono@0.6.0(hono@4.10.4))(hono@4.10.4)(quansync@0.2.11)(zod@4.1.12)
+        specifier: ~0.1.1
+        version: 0.1.1(@jderstd/hono@0.7.0(hono@4.10.4))(hono@4.10.4)(quansync@0.2.11)(zod@4.1.12)
       '@node-rs/argon2':
         specifier: ^2.0.2
         version: 2.0.2
@@ -1298,8 +1298,8 @@ packages:
     peerDependencies:
       hono: ^4
 
-  '@hono/standard-validator@0.1.5':
-    resolution: {integrity: sha512-EIyZPPwkyLn6XKwFj5NBEWHXhXbgmnVh2ceIFo5GO7gKI9WmzTjPDKnppQB0KrqKeAkq3kpoW4SIbu5X1dgx3w==}
+  '@hono/standard-validator@0.2.0':
+    resolution: {integrity: sha512-pFq0UVAnjzXcDAgqFpDeVL3MOUPrlIh/kPqBDvbCYoThVhhS+Vf37VcdsakdOFFGiqoiYVxp3LifXFhGhp/rgQ==}
     peerDependencies:
       '@standard-schema/spec': 1.0.0
       hono: '>=3.9.0'
@@ -1485,10 +1485,10 @@ packages:
       '@types/express': ^5.0.0
       express: ^5.0.0
 
-  '@jderstd/hono-openapi@0.1.0':
-    resolution: {integrity: sha512-Nv3dB2jPoCv6Es48bk2OQXn2QuldYkRvmzzHqsRDdqRAcYp/y4B8WiRhwRNvLlJ4DvPF7toiV+ZOMWGiDF7feg==}
+  '@jderstd/hono-openapi@0.1.1':
+    resolution: {integrity: sha512-28a6piBZLQxnp64jyROhNiCEoLplNeJJqz2AyXZO/QnPPnwFMqlZGnSdURd/iljofwr0ZhHYGODkXIasZEIdgA==}
     peerDependencies:
-      '@jderstd/hono': ~0.6.0
+      '@jderstd/hono': ~0.7.0
       '@valibot/to-json-schema': ^1.0.0
       hono: ^4.5.0
       zod-openapi: ^4.0.0
@@ -1498,14 +1498,14 @@ packages:
       zod-openapi:
         optional: true
 
-  '@jderstd/hono-standard-validator@0.1.0':
-    resolution: {integrity: sha512-yYU06eWJNrG362LcAp9/dfgYf7goSjAgay4D2Bf291MPV7Ld/cmzvqHuY6lkq4B3bxrQFFNgZiV4ypq77diQAQ==}
+  '@jderstd/hono-standard-validator@0.2.0':
+    resolution: {integrity: sha512-4UBnF5DNoWtrywhnGzRqRqviEpkYDGSbY4kC9g9EZkyDP3UNPq28MRn46Exe8rui3YF2X60khCfu3++hYBqtrg==}
     peerDependencies:
-      '@jderstd/hono': ~0.6.0
+      '@jderstd/hono': ~0.7.0
       hono: ^4.5.0
 
-  '@jderstd/hono@0.6.0':
-    resolution: {integrity: sha512-VG5yY2R6nsMFhP3SvTa578I98XXROZ6ZIeZdNA8C3HuguRUi77G3IHng7sKgO5ROV7XLI+UHoRBCbje8blZ0tA==}
+  '@jderstd/hono@0.7.0':
+    resolution: {integrity: sha512-E5zuRFE2zn9CciM1fQocEA0iUbq6nVdRa5oAwnid+FU3NHXhnus+riUyLTXVHv7MKxGRBIXbvP1ZP5Xe2PHXaQ==}
     peerDependencies:
       hono: ^4.5.0
 
@@ -5128,7 +5128,7 @@ snapshots:
     dependencies:
       hono: 4.10.4
 
-  '@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.4)':
+  '@hono/standard-validator@0.2.0(@standard-schema/spec@1.0.0)(hono@4.10.4)':
     dependencies:
       '@standard-schema/spec': 1.0.0
       hono: 4.10.4
@@ -5249,16 +5249,16 @@ snapshots:
       '@types/express': 5.0.3
       express: 5.1.0
 
-  '@jderstd/hono-openapi@0.1.0(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.4))(@jderstd/hono@0.6.0(hono@4.10.4))(hono@4.10.4)(quansync@0.2.11)(zod@4.1.12)':
+  '@jderstd/hono-openapi@0.1.1(@jderstd/hono@0.7.0(hono@4.10.4))(hono@4.10.4)(quansync@0.2.11)(zod@4.1.12)':
     dependencies:
-      '@jderstd/hono': 0.6.0(hono@4.10.4)
-      '@jderstd/hono-standard-validator': 0.1.0(@jderstd/hono@0.6.0(hono@4.10.4))(hono@4.10.4)
+      '@jderstd/hono': 0.7.0(hono@4.10.4)
+      '@jderstd/hono-standard-validator': 0.2.0(@jderstd/hono@0.7.0(hono@4.10.4))(hono@4.10.4)
       '@standard-community/standard-json': 0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12)
       '@standard-community/standard-openapi': 0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.12)
       '@standard-schema/spec': 1.0.0
       '@types/json-schema': 7.0.15
       hono: 4.10.4
-      hono-openapi: 1.1.1(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.4))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.4)(openapi-types@12.1.3)
+      hono-openapi: 1.1.1(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.4)(openapi-types@12.1.3)
       openapi-types: 12.1.3
     transitivePeerDependencies:
       - '@hono/standard-validator'
@@ -5271,14 +5271,14 @@ snapshots:
       - zod
       - zod-to-json-schema
 
-  '@jderstd/hono-standard-validator@0.1.0(@jderstd/hono@0.6.0(hono@4.10.4))(hono@4.10.4)':
+  '@jderstd/hono-standard-validator@0.2.0(@jderstd/hono@0.7.0(hono@4.10.4))(hono@4.10.4)':
     dependencies:
-      '@hono/standard-validator': 0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.4)
-      '@jderstd/hono': 0.6.0(hono@4.10.4)
+      '@hono/standard-validator': 0.2.0(@standard-schema/spec@1.0.0)(hono@4.10.4)
+      '@jderstd/hono': 0.7.0(hono@4.10.4)
       '@standard-schema/spec': 1.0.0
       hono: 4.10.4
 
-  '@jderstd/hono@0.6.0(hono@4.10.4)':
+  '@jderstd/hono@0.7.0(hono@4.10.4)':
     dependencies:
       '@jderstd/core': 0.4.0
       hono: 4.10.4
@@ -6532,14 +6532,13 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono-openapi@1.1.1(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.4))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.4)(openapi-types@12.1.3):
+  hono-openapi@1.1.1(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.4)(openapi-types@12.1.3):
     dependencies:
       '@standard-community/standard-json': 0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12)
       '@standard-community/standard-openapi': 0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod@4.1.12)
       '@types/json-schema': 7.0.15
       openapi-types: 12.1.3
     optionalDependencies:
-      '@hono/standard-validator': 0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.4)
       hono: 4.10.4
 
   hono@4.10.4: {}

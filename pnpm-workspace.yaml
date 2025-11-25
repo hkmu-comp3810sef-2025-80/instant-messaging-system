@@ -9,4 +9,5 @@ minimumReleaseAgeExclude:
     - "@apst/tsconfig"
     - "@jderstd/express"
     - "@jderstd/hono"
+    - "@jderstd/hono-standard-validator"
     - "@jderstd/hono-openapi"
