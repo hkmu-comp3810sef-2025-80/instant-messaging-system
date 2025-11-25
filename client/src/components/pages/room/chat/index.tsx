@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { RoomInput } from "#/components/pages/room/chat/input";
 import { RoomMessages } from "#/components/pages/room/chat/messages";
-import { ScrollArea } from "#/components/ui/scroll-area";
+import { Scrollbar } from "#/components/ui/scrollbar";
 
 const THRESHOLD = 100 as const;
 
@@ -53,9 +53,9 @@ const Chat = (props: ChatProps): React.JSX.Element => {
     return (
         <>
             {/* Messages */}
-            <ScrollArea
-                ref={scrollAreaRef}
-                className="flex-1 min-h-0"
+            <Scrollbar
+                contentRef={scrollAreaRef}
+                containerClassName="h-[calc(100%-69px-57px)] md:h-[calc(100%-69px)]"
             >
                 <RoomMessages
                     id={props.id}
@@ -64,7 +64,7 @@ const Chat = (props: ChatProps): React.JSX.Element => {
                     hvNewMessage={hvNewMessage}
                     setHvNewMessage={setHvNewMessage}
                 />
-            </ScrollArea>
+            </Scrollbar>
 
             {/* Input */}
             <RoomInput

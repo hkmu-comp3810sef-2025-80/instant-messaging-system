@@ -77,7 +77,7 @@ const Message = (props: MessageProps): React.JSX.Element => {
     return (
         <div
             className={cn(
-                "relative m-4 w-fit max-w-[60%] p-4 rounded-lg bg-secondary/40",
+                "relative m-4 w-fit max-w-[80%] md:max-w-[60%] p-4 rounded-lg bg-secondary/40",
                 isMe ? "ml-auto" : "mr-auto",
             )}
         >
