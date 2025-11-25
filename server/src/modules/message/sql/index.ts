@@ -72,6 +72,14 @@ const createMessage = async (
     });
 };
 
+const deleteMessagesByRoom = async (
+    roomId: ObjectId,
+): Promise<DeleteResult> => {
+    return await message.deleteMany({
+        roomId,
+    });
+};
+
 const deleteMessage = async (id: ObjectId): Promise<DeleteResult> => {
     return await message.deleteOne({
         _id: id,
@@ -79,4 +87,4 @@ const deleteMessage = async (id: ObjectId): Promise<DeleteResult> => {
 };
 
 export type { FindMessagesOptions, CreateRoomData };
-export { findMessages, createMessage, deleteMessage };
+export { findMessages, createMessage, deleteMessagesByRoom, deleteMessage };

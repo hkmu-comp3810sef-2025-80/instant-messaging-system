@@ -5,6 +5,7 @@ import type { AccessTokenPayload } from "#/utils/jwt-verify/access";
 
 import { ObjectId } from "mongodb";
 
+import { deleteMessagesByRoom } from "#/modules/message/sql";
 import { deleteRoom, findRoomByID } from "#/modules/room/sql";
 import { verifyAccessToken } from "#/utils/jwt-verify/access";
 import { ServiceError } from "#/utils/service-error";
@@ -42,6 +43,8 @@ type ServiceRoomDeleteOptions = {
 const serviceRoomDelete = async (
     options: ServiceRoomDeleteOptions,
 ): Promise<void> => {
+    const id: ObjectId = new ObjectId(options.id);
+
     const payload: AccessTokenPayload | undefined = await verifyAccessToken(
         options.access,
     );
@@ -56,9 +59,7 @@ const serviceRoomDelete = async (
     }
 
     // find room
-    const room: WithId<Room> | null = await findRoomByID(
-        new ObjectId(options.id),
-    );
+    const room: WithId<Room> | null = await findRoomByID(id);
 
     if (!room) {
         const code: ServiceRoomDeleteErrorCode =
@@ -78,7 +79,8 @@ const serviceRoomDelete = async (
             .setMessage(getErrorMessage(code));
     }
 
-    await deleteRoom(new ObjectId(options.id));
+    await deleteMessagesByRoom(id);
+    await deleteRoom(id);
 };
 
 export type { ServiceRoomDeleteOptions };
