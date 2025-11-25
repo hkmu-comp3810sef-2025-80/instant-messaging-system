@@ -51,7 +51,6 @@ import {
 
 const getRefreshCookieOptions = (): CookieOptions => {
     return {
-        domain: "onrender.com",
         expires: new Date(Date.now() + REFRESH_EXP),
         httpOnly: true,
         secure: IS_PRD,
@@ -62,7 +61,6 @@ const getRefreshCookieOptions = (): CookieOptions => {
 
 const getAccessCookieOptions = (): CookieOptions => {
     return {
-        domain: "onrender.com",
         expires: new Date(Date.now() + ACCESS_EXP),
         httpOnly: true,
         secure: IS_PRD,
