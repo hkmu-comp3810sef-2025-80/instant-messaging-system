@@ -15,6 +15,7 @@ Welcome to the Instant Messaging System! This guide will help you get started, m
 6. [Profile & Settings](#profile&Settings) 
 7. [Logging Out](#loggingOut)  
 
+<a name="gettingStarted"/>
 ## 1. Getting Started
 
 To access the specific Instant Messaging System:
@@ -88,18 +89,18 @@ Once you have an account:
 
   Then, you can now start chatting with other user in that chatroom.
 
-  <ins>Group Modification</ins>
+### Group Modification
 
-    Change Group information
+  Change Group information
 
-    Click the "Update" button in the bottom left corner .
+  Click the "Update" button in the bottom left corner .
 
-    Enter new group name AND/OR Enter new group descriptions
+  Enter new group name AND/OR Enter new group descriptions
 
-    Click "Update" button to confirm the group information update.
+  Click "Update" button to confirm the group information update.
 
 
-### Delect Group
+### Delete Group
 
   Click the "Delete" button in the bottom left corner .
 
