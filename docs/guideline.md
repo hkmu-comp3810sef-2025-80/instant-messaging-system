@@ -6,7 +6,7 @@ This is the user guideline for the Instant Messaging System.
 
 Welcome to the Instant Messaging System! This guide will help you get started, manage your account, and chat with your friends and colleagues.
 
-##### Table of Contents
+## Table of Contents
 1. [Getting Started](#gettingStarted)  
 2. [Account Registration](#accountRegistration)  
 3. [Logging In](#loggingIn)  
@@ -28,6 +28,8 @@ To access the specific Instant Messaging System:
 
   You will land on the main page.
 
+
+<a name="accountRegistration"/>
 
 ## 2. Account Registration
 
@@ -51,6 +53,8 @@ If you are a new user, you must create an account to start chatting.
   Upon success, you will be redirected to the Login page.
 
 
+<a name="loggingIn"/>
+
 ## 3. Logging In
 
 Once you have an account:
@@ -65,6 +69,8 @@ Once you have an account:
 
   Note: If you enter the wrong credentials, an error message will appear: "Invalid username or password".
 
+
+<a name="groupChats"/>
 
 ## 4. Group Chats
 
@@ -113,6 +119,8 @@ Once you have an account:
   Upon success, the group will be deleted.
 
 
+<a name="sendingMessages"/>
+
 ## 5. Sending Messages
 
 Communicating is simple and happens in real-time.
@@ -127,6 +135,8 @@ Communicating is simple and happens in real-time.
 
   Your message will appear instantly in the chat history on the right side. The recipient's messages will appear on the left.
 
+
+<a name="profile&Settings"/>
 
 ## 6. Profile & Settings
 
@@ -160,6 +170,8 @@ Communicating is simple and happens in real-time.
 
   It will change you website theme immediately.
 
+
+<a name="loggingOut"/>
 
 ## 7. Logging Out
 
