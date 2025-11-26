@@ -16,6 +16,7 @@ Welcome to the Instant Messaging System! This guide will help you get started, m
 7. [Logging Out](#loggingOut)  
 
 <a name="gettingStarted"/>
+
 ## 1. Getting Started
 
 To access the specific Instant Messaging System:
