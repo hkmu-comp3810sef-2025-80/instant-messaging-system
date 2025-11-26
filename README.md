@@ -2,9 +2,11 @@
 
 A instant messaging system for users to communicate with each other.
 
-Web: [ims.alpheus.day](ims.alpheus.day)
-API: [ims-api.alpheus.day](ims-api.alpheus.day)
-API docs: [ims-api.alpheus.day/openapi](ims-api.alpheus.day/openapi)
+Web: [ims.alpheus.day](https://ims.alpheus.day)
+
+API: [ims-api.alpheus.day](https://ims-api.alpheus.day)
+
+API docs: [ims-api.alpheus.day/openapi](https://ims-api.alpheus.day/openapi)
 
 ## Project Structure
 
