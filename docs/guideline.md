@@ -19,7 +19,7 @@ Welcome to the Instant Messaging System! This guide will help you get started, m
 
 
 
-## 1. Getting Started
+## Getting Started
 
 To access the specific Instant Messaging System:
 
