@@ -43,11 +43,9 @@ If you are a new user, you must create an account to start chatting.
 
     Username: Choose a unique display name.
 
-    Email: Enter a valid email address.
-
     Password: Enter a secure password.
 
-  Confirm Password: Re-enter your password to ensure it matches.
+    Confirm Password: Re-enter your password to ensure it matches.
 
 
   Click the "Create Account" button.
