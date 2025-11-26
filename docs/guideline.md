@@ -7,163 +7,163 @@ This is the user guideline for the Instant Messaging System.
 Welcome to the Instant Messaging System! This guide will help you get started, manage your account, and chat with your friends and colleagues.
 
 ## Table of Contents
-[Getting Started](#gettingStarted)  
-[Account Registration](#accountRegistration)  
-[Logging In](#loggingIn)  
-[Group Chats](#groupChats)  
-[Sending Messages](#sendingMessages) 
-[Profile & Settings](#profile&Settings) 
-[Logging Out](#loggingOut)  
+1. [Getting Started](#gettingStarted)  
+2. [Account Registration](#accountRegistration)  
+3. [Logging In](#loggingIn)  
+4. [Group Chats](#groupChats)  
+5. [Sending Messages](#sendingMessages) 
+6. [Profile & Settings](#profile&Settings) 
+7. [Logging Out](#loggingOut)  
 
 ## 1. Getting Started
 
 To access the specific Instant Messaging System:
 
-Open your web browser (Chrome, Edge, Firefox, or Safari).
+  Open your web browser (Chrome, Edge, Firefox, or Safari).
 
-Enter the website URL [ims.alpheus.day](https://ims.alpheus.day)
+  Enter the website URL [ims.alpheus.day](https://ims.alpheus.day)
 
-You will land on the main page.
+  You will land on the main page.
 
 
 ## 2. Account Registration
 
 If you are a new user, you must create an account to start chatting.
 
-On the main page, click the "Sign Up" button.
+  On the main page, click the "Sign Up" button.
 
-Fill in the required details:
+  Fill in the required details:
 
-Username: Choose a unique display name.
+    Username: Choose a unique display name.
 
-Email: Enter a valid email address.
+    Email: Enter a valid email address.
 
-Password: Enter a secure password.
+    Password: Enter a secure password.
 
-Confirm Password: Re-enter your password to ensure it matches.
+  Confirm Password: Re-enter your password to ensure it matches.
 
 
-Click the "Create Account" button.
+  Click the "Create Account" button.
 
-Upon success, you will be redirected to the Login page.
+  Upon success, you will be redirected to the Login page.
 
 
 ## 3. Logging In
 
 Once you have an account:
 
-Go to the Login page.
+  Go to the Login page.
 
-Enter your registered Username and Password.
+  Enter your registered Username and Password.
 
-Click the "Enter Chatroom" button.
+  Click the "Enter Chatroom" button.
 
-You will be taken to the main page.
+  You will be taken to the main page.
 
-Note: If you enter the wrong credentials, an error message will appear: "Invalid username or password".
+  Note: If you enter the wrong credentials, an error message will appear: "Invalid username or password".
 
 
 ## 4. Group Chats
 
-<ins>Creating a Group</ins>
+### Creating a Group
 
-Collaborate with multiple people at once.
+  Chatting with multiple people at once.
 
-Click the "Create Room" button.
+    Click the "Create Room" button.
 
-Enter a Group Name (e.g., "Study Group").
+    Enter a Group Name (e.g., "Study Group").
 
-Enter Description of the group(This is optional).
+    Enter Description of the group(This is optional).
 
-Click "Create Room".
+    Click "Create Room".
 
-The new group will appear in chat list.
-
-
-<ins>Entering a Group</ins>
-
-Click the "Find Rooms" button.
-
-Select a group that you want to enter.
-
-Then, you can now start chatting with other user in that chatroom.
-
-<ins>Group Modification</ins>
-
-Change Group information
-
-Click the "Update" button in the bottom left corner .
-
-Enter new group name AND/OR Enter new group descriptions
-
-Click "Update" button to confirm the group information update.
+    The new group will appear in chat list.
 
 
-<ins>Delect Group</ins>
+### Entering a Group
 
-Click the "Delete" button in the bottom left corner .
+  Click the "Find Rooms" button.
 
-It will show a message box ask you "Are your sure?".
+  Select a group that you want to enter.
 
-Click "Delete" button to confirm.
+  Then, you can now start chatting with other user in that chatroom.
 
-Upon success, the group will be deleted.
+  <ins>Group Modification</ins>
+
+    Change Group information
+
+    Click the "Update" button in the bottom left corner .
+
+    Enter new group name AND/OR Enter new group descriptions
+
+    Click "Update" button to confirm the group information update.
+
+
+### Delect Group
+
+  Click the "Delete" button in the bottom left corner .
+
+  It will show a message box ask you "Are your sure?".
+
+  Click "Delete" button to confirm.
+
+  Upon success, the group will be deleted.
 
 
 ## 5. Sending Messages
 
 Communicating is simple and happens in real-time.
 
-Type a Message: Enter message in the text input box at the bottom of the chat window.
+  Type a Message: Enter message in the text input box at the bottom of the chat window.
 
-<ins>Send:</ins>
+  <ins>Send:</ins>
 
-Press the "Enter" key on your keyboard, OR
+    Press the "Enter" key on your keyboard, OR
 
-Click the "Send" button.
+    Click the "Send" button.
 
-Your message will appear instantly in the chat history on the right side. The recipient's messages will appear on the left.
+  Your message will appear instantly in the chat history on the right side. The recipient's messages will appear on the left.
 
 
 ## 6. Profile & Settings
 
 ### Updating Your Profile
 
-Click your Profile in your top right corner(e.g, "Welcome, [your username]!")
+  Click your Profile in your top right corner(e.g, "Welcome, [your username]!")
 
-Here you can:
+  Here you can:
 
-<ins>Change your Display Name</ins>
+  <ins>Change your Display Name</ins>
 
-Enter your new username.
+    Enter your new username.
 
-Press the "Update" button to confirm.
+    Press the "Update" button to confirm.
 
 
-<ins>Change your Password</ins>
+  <ins>Change your Password</ins>
 
-Enter your new password.
+    Enter your new password.
 
-Enter you new password again to confirm password.
+    Enter you new password again to confirm password.
 
-Press the "Update" button to confirm.
+    Press the "Update" button to confirm.
 
 
 ### Change Website Theme
 
-Click the theme icon on your top right corner in you main page(which should be sun icon OR moon icon)
+  Click the theme icon on your top right corner in you main page(which should be sun icon OR moon icon)
 
-Select you prefered theme(Light/Dark/System)
+  Select you prefered theme(Light/Dark/System)
 
-It will change you website theme immediately.
+  It will change you website theme immediately.
 
 
 ## 7. Logging Out
 
-To ensure your account security, always log out when you are finished, especially on public computers.
+  To ensure your account security, always log out when you are finished, especially on public computers.
 
-Click your Profile in your top right corner(e.g, "Welcome, [your username]!")
+  Click your Profile in your top right corner(e.g, "Welcome, [your username]!")
 
-Click "Logout" button.
+  Click "Logout" button.
 
-You will be redirected back to the main screen after log out.
+  You will be redirected back to the main screen after log out.
